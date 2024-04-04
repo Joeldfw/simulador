@@ -349,8 +349,12 @@
         function finalizarExamen() {
             clearInterval(temporizadorInterval); // Detener el temporizador
 
+            var preguntas = document.getElementsByClassName("pregunta");
+            console.log(preguntas.length);
+            for (var i = 0; i < preguntas.length; i++) {
+                preguntas[i].style.display = 'none';
+            }
             document.getElementById('temporizador').style.display = 'none';
-            document.getElementById('pregunta10').style.display = 'none';
             document.getElementById('resultado').style.display = 'block';
             document.getElementById('puntaje').innerText = 'Puntaje: ' + (puntaje*100) + '/1000';
 
